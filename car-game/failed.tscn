@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://btbv11uc1gjms"]
+
+[ext_resource type="Script" uid="uid://bgqo6rq18egka" path="res://failed.gd" id="1_fk11w"]
+[ext_resource type="Texture2D" uid="uid://b51deau8sjbyd" path="res://SAMPLECAR.jpg" id="2_phe37"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l31jx"]
+texture = ExtResource("2_phe37")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av6p6"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk11w"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Failed" type="Node2D"]
+script = ExtResource("1_fk11w")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1150.0
+offset_bottom = 644.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_l31jx")
+metadata/_edit_use_anchors_ = true
+
+[node name="playagain" type="Button" parent="."]
+offset_left = 220.0
+offset_top = 537.0
+offset_right = 491.0
+offset_bottom = 610.0
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.99607843, 0.41568628, 0.6666667, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_av6p6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fk11w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_av6p6")
+text = "PLAY AGAIN"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 673.0
+offset_top = 535.0
+offset_right = 944.0
+offset_bottom = 608.0
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.99607843, 0.29803923, 0.75686276, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_av6p6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fk11w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_av6p6")
+text = "EXIT"
+
+[connection signal="pressed" from="playagain" to="." method="_on_playagain_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
